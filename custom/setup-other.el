@@ -45,13 +45,16 @@ If the new path's directories does not exist, create them."
 
 (setq make-backup-file-name-function 'my-backup-file-name)
 
-;; Smartparens
-(use-package smartparens
-   :ensure t)
-(require 'smartparens-config)
-(add-hook 'f90-mode-hook #'smartparens-strict-mode)
-(add-hook 'c-mode-hook #'smartparens-strict-mode)
-(add-hook 'c++-mode-hook #'smartparens-strict-mode)
+;; Smartparens, not work for 24.3
+(if (version< emacs-version "24.4")
+    ()
+  (use-package smartparens
+    :ensure t)
+  (require 'smartparens-config)
+  (smartparens-global-mode t)
+  (add-hook 'f90-mode-hook #'smartparens-strict-mode)
+  (add-hook 'c-mode-hook #'smartparens-strict-mode)
+  (add-hook 'c++-mode-hook #'smartparens-strict-mode))
 
 ;sr-speedbar
 (use-package sr-speedbar

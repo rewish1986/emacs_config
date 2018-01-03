@@ -3,6 +3,7 @@
   (progn
     (ivy-mode 1)
     (setq ivy-use-virtual-buffers t)
+    (setq enable-recursive-minibuffers t)
     (global-set-key (kbd "C-c s") 'swiper)))
 
 (use-package counsel
@@ -16,10 +17,15 @@
    ("<f1> l" . counsel-load-library)
    ("C-h f" . counsel-describe-function)
    ("C-h v" . counsel-describe-variable)
-   ("C-h l" . counsel-load-library)))
+   ("C-h l" . counsel-load-library)
+   ("C-c f" . counsel-git)
+   ("C-c j" . counsel-git-grep)
+   ("C-c l" . counsel-locate)
+   ("C-S-o" . counsel-rhythmbox)
+   ))
 
 (use-package counsel-projectile
   :init
-  (counsel-projectile-on))
+  (counsel-projectile-mode))
 
 (provide 'setup-ivy-counsel)
