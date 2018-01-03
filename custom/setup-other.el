@@ -10,6 +10,7 @@
 (auto-fill-mode 0))                   ; turn off auto-filling
 
 (global-auto-revert-mode t)
+
 (setq save-place-file "~/.emacs.d/saveplace") ;; keep my ~/ clean
 (setq-default save-place t)                   ;; activate it for all buffers
 (require 'saveplace)                          ;; get the package
@@ -42,7 +43,6 @@ If the new path's directories does not exist, create them."
     backupFilePath
     )
   )
-
 (setq make-backup-file-name-function 'my-backup-file-name)
 
 ;; Smartparens, not work for 24.3
@@ -69,12 +69,12 @@ If the new path's directories does not exist, create them."
 (setq column-number-mode t)
 
 ;;window layout (it should be put at the end of the init file)
-(use-package workgroups2
-  :ensure t)
-(setq wg-session-file "~/.emacs.d/.emacs_workgroups")
-(setq wg-emacs-exit-save-behavior           'nil)      ; Options: 'save 'ask nil
-(setq wg-workgroups-mode-exit-save-behavior 'nil)      ; Options: 'save 'ask nil
-(global-set-key [f12] 'wg-reload-session)
-(workgroups-mode 1)
+;(use-package workgroups2
+;  :ensure t)
+;(setq wg-session-file "~/.emacs.d/.emacs_workgroups")
+;(setq wg-emacs-exit-save-behavior           'nil)      ; Options: 'save 'ask nil
+;(setq wg-workgroups-mode-exit-save-behavior 'nil)      ; Options: 'save 'ask nil
+;(global-set-key [f12] 'wg-reload-session)
+;(workgroups-mode 1)
 
 (provide 'setup-other)
