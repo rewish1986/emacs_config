@@ -22,6 +22,5 @@
 ;(require 'setup-helm-gtags)
 (require 'setup-ggtags)
 (require 'setup-cedet)
-(require 'setup-c)
 (require 'setup-editing)
 (require 'setup-other)
