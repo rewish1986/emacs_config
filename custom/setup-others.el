@@ -68,6 +68,31 @@ If the new path's directories does not exist, create them."
 (windmove-default-keybindings 'meta)
 (setq column-number-mode t)
 
+;Windows setup
+(when (display-graphic-p)
+     (use-package pdf-tools
+         :pin manual
+         :config
+        ; (setq-default pdf-view-display-size 'fit-page)
+         (setq pdf-annot-activate-created-annotations t)
+         (pdf-tools-install)
+         :ensure t)
+     (use-package auctex
+         :defer t
+         :ensure t)
+)
+
+;python
+(use-package ein
+  :ensure t)
+
+;ipython
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "--simple-prompt -i")
+;git
+(use-package magit
+  :ensure t)
+
 ;;window layout (it should be put at the end of the init file)
 ;(use-package workgroups2
 ;  :ensure t)
@@ -77,4 +102,5 @@ If the new path's directories does not exist, create them."
 ;(global-set-key [f12] 'wg-reload-session)
 ;(workgroups-mode 1)
 
-(provide 'setup-other)
+
+(provide 'setup-others)
